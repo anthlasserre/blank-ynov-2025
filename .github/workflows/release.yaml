@@ -1,0 +1,46 @@
+name: EAS continuous deploy
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🏗 Checkout code
+        uses: actions/checkout@v4
+
+      - name: 🏗 Setup Node
+        uses: actions/setup-node@v3
+
+      - name: 🏗 Setup cache
+        uses: actions/cache@v4
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+
+      - name: 📦 Install dependencies
+        run: yarn install --frozen-lockfile
+        shell: bash
+
+      - name: 🏗  Setup EAS
+        uses: expo/expo-github-action@v8
+        with:
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
+
+      - name: Continuously Deploy
+        id: continuous-deploy
+        uses: expo/expo-github-action/continuous-deploy-fingerprint@main
+        with:
+          profile: staging
+          branch: main
+
+      - name: Upload update-output
+        uses: actions/upload-artifact@v4
+        with:
+          name: update-output
+          path: update-output.json

@@ -1,3 +1,6 @@
+import { useAsyncStorage } from '@react-native-async-storage/async-storage';
+import { useRouter } from 'expo-router';
+
 import HorizontalSlider from '~/components/HorizontalSlider';
 import { Box } from '~/theme';
 
@@ -23,9 +26,17 @@ const slides = [
 ];
 
 export default function OnboardingScreen() {
+  const { setItem } = useAsyncStorage('is_onboarded');
+  const router = useRouter();
+
+  const onEnd = () => {
+    setItem('true');
+    router.replace('/(tabs)');
+  };
+
   return (
     <Box backgroundColor="black" flex={1}>
-      <HorizontalSlider slides={slides} />
+      <HorizontalSlider slides={slides} onEnd={onEnd} />
     </Box>
   );
 }

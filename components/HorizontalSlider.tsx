@@ -22,9 +22,10 @@ interface HorizontalSliderProps {
     title: string;
     desc: string;
   }[];
+  onEnd: () => void;
 }
 
-export default function HorizontalSlider({ slides }: HorizontalSliderProps) {
+export default function HorizontalSlider({ slides, onEnd }: HorizontalSliderProps) {
   const [slideIndex, setSlideIndex] = useState(0);
   const scrollX = useSharedValue(0);
 
@@ -81,7 +82,7 @@ export default function HorizontalSlider({ slides }: HorizontalSliderProps) {
           </Box>
         ) : (
           <Box>
-            <Button title="Get Started" />
+            <Button title="Get Started" onPress={onEnd} />
           </Box>
         )}
       </AnimatedBox>
