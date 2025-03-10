@@ -6,6 +6,11 @@ type NamedStyles<T> = {
 };
 
 const palette = {
+  // Theme
+  foundationGreyLighter: '#A2A2A2',
+  foundationBrownNormal: '#C67C4E',
+  foundationSurfaceNormal: '#D8D8D8',
+
   gray: '#808080',
   blue: '#007AFF',
   darkGray: '#38434D',
@@ -31,13 +36,24 @@ const theme = createTheme({
     s_3: 3,
     m_6: 6,
     l_12: 12,
+    ml_16: 16,
     xl_24: 24,
+    full: 9999,
   },
   textVariants: {
     body: {
-      fontSize: 16,
+      fontFamily: 'Sora-Regular',
+      fontSize: 18,
     },
-    title: { fontSize: 20, fontWeight: 'bold' },
+    bodyBold: {
+      fontFamily: 'Sora-SemiBold',
+      fontSize: 18,
+    },
+    title: {
+      fontSize: 32,
+      lineHeight: 46,
+      fontFamily: 'Sora-Bold',
+    },
     large: {
       fontSize: 36,
     },
