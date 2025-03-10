@@ -5,10 +5,16 @@
   },
   "build": {
     "develop": {
-      "distribution": "internal"
+      "distribution": "internal",
+      "env": {
+        "EXPO_PUBLIC_APP_VARIANT": "develop"
+      }
     },
     "staging": {
-      "distribution": "internal"
+      "distribution": "internal",
+      "env": {
+        "EXPO_PUBLIC_APP_VARIANT": "staging"
+      }
     },
     "production": {
       "autoIncrement": true
