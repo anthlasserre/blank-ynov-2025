@@ -1,8 +1,8 @@
 import { Pressable } from 'react-native';
 import { useSharedValue, useAnimatedStyle, withSpring } from 'react-native-reanimated';
 
-import AnimatedBox from '~/theme/AnimatedBox';
-import { BoxProps } from '~/theme/Box';
+import AnimatedBox from '~/theme/animated-box';
+import { BoxProps } from '~/theme/box';
 
 interface AnimatedTouchableProps extends BoxProps {
   scale?: number;

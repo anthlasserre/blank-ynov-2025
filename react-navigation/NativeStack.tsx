@@ -1,6 +1,7 @@
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { EmptyScreen } from "../components/empty-screen";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
+import { EmptyScreen } from '../components/empty-screen';
 
 const queryClient = new QueryClient();
 

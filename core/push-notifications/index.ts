@@ -1,7 +1,7 @@
 import Constants from 'expo-constants';
 import * as Device from 'expo-device';
 import * as Notifications from 'expo-notifications';
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import { Platform } from 'react-native';
 
 function handleRegistrationError(errorMessage: string) {
@@ -56,10 +56,10 @@ export const usePushNotifications = () => {
   const [notification, setNotification] = useState<Notifications.Notification | undefined>(
     undefined
   );
-  const notificationListener = useRef<Notifications.EventSubscription>();
-  const responseListener = useRef<Notifications.EventSubscription>();
+  const notificationListener = useRef<Notifications.EventSubscription | null>(null);
+  const responseListener = useRef<Notifications.EventSubscription | null>(null);
 
-  useEffect(() => {
+  const register = useCallback(() => {
     registerForPushNotificationsAsync()
       .then((token) => setExpoPushToken(token ?? ''))
       .catch((error: any) => setExpoPushToken(`${error}`));
@@ -80,5 +80,5 @@ export const usePushNotifications = () => {
     };
   }, []);
 
-  return { expoPushToken, notification };
+  return { register, expoPushToken, notification };
 };

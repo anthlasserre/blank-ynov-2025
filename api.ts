@@ -1,12 +1,16 @@
 const BASE_URL = 'https://fake-coffee-brand-api.vercel.app/api';
 
-type Product = {
+export type Product = {
   id: number;
-  title: string;
-  price: string;
+  name: string;
   description: string;
-  category: string;
-  image: string;
+  price: number;
+  region: string;
+  weight: number;
+  flavor_profile: string[];
+  grind_option: string[];
+  roast_level: number;
+  image_url: string;
 };
 
 export class ApiClient {
@@ -19,6 +23,6 @@ export class ApiClient {
   // https://fake-coffee-brand-api.vercel.app/api/:id
   static getProductById = async (id: number): Promise<Product> => {
     // await new Promise((resolve) => setTimeout(resolve, 5000));
-    return fetch(`${BASE_URL}/${id}`).then((res) => res.json());
+    return fetch(`${BASE_URL}/${id}`).then((res) => res.json().then((data) => data?.[0]));
   };
 }

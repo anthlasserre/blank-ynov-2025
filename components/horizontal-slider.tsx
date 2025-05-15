@@ -14,7 +14,7 @@ import HorizontalSliderItem from './horizontal-slider-item';
 
 import { WINDOW_WIDTH } from '~/core/dimensions';
 import { Box, useTheme } from '~/theme';
-import AnimatedBox from '~/theme/AnimatedBox';
+import AnimatedBox from '~/theme/animated-box';
 
 interface HorizontalSliderProps {
   slides: {

@@ -3,8 +3,8 @@ import { Image, StyleSheet } from 'react-native';
 
 import { AnimatedTouchable } from './animated-touchable';
 
+import { Product } from '~/api';
 import { WINDOW_WIDTH } from '~/core/dimensions';
-import { Product } from '~/core/query/use-get-all-products';
 import { AddIcon } from '~/icons/add';
 import { Box, Text } from '~/theme';
 import { formatPrice } from '~/utils/price';

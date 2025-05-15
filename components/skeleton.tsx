@@ -7,8 +7,8 @@ import {
   withTiming,
 } from 'react-native-reanimated';
 
-import AnimatedBox from '~/theme/AnimatedBox';
-import { BoxProps } from '~/theme/Box';
+import AnimatedBox from '~/theme/animated-box';
+import { BoxProps } from '~/theme/box';
 
 const DEFAULT_COLORS = ['#E0E0E0', '#F0F0F0'] as [string, string];
 

@@ -1,8 +1,8 @@
 import Storage from '@react-native-async-storage/async-storage';
 import { useEffect, useState } from 'react';
 
-export const useStorage = (key: string) => {
-  const [value, setValue] = useState<string | null>(null);
+export const useStorage = (key: string, defaultValue?: string) => {
+  const [value, setValue] = useState<string | null>(defaultValue ?? null);
 
   const setItem = async (value: string) => {
     try {

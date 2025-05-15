@@ -1,12 +1,11 @@
 import { LinearGradient } from 'expo-linear-gradient';
-import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { Image, StyleSheet } from 'react-native';
 import { FadeInDown, interpolate, SharedValue, useAnimatedStyle } from 'react-native-reanimated';
 
 import { WINDOW_HEIGHT, WINDOW_WIDTH } from '~/core/dimensions';
 import { Box, Text } from '~/theme';
-import AnimatedBox from '~/theme/AnimatedBox';
+import AnimatedBox from '~/theme/animated-box';
 
 interface HorizontalSliderItemProps {
   index: number;

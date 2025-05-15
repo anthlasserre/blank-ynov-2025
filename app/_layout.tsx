@@ -13,7 +13,7 @@ import { asyncStoragePersister, queryClient } from '~/query/client';
 SplashScreen.preventAutoHideAsync();
 
 export default function Layout() {
-  const { notification, expoPushToken } = usePushNotifications();
+  const { notification } = usePushNotifications();
 
   const [loaded, error] = useFonts({
     'Sora-Bold': require('../assets/fonts/Sora-Bold.ttf'),
