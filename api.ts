@@ -1,4 +1,4 @@
-const BASE_URL = 'https://fakestoreapi.com';
+const BASE_URL = 'https://fake-coffee-brand-api.vercel.app/api';
 
 type Product = {
   id: number;
@@ -10,15 +10,15 @@ type Product = {
 };
 
 export class ApiClient {
-  // https://fakestoreapi.com/products
+  // https://fake-coffee-brand-api.vercel.app/api
   static getProducts = async (): Promise<Product[]> => {
     // Sleep 5s
     // await new Promise((resolve) => setTimeout(resolve, 5000));
-    return fetch(`${BASE_URL}/products`).then((res) => res.json());
+    return fetch(`${BASE_URL}`).then((res) => res.json());
   };
-  // https://fakestoreapi.com/products/:id
+  // https://fake-coffee-brand-api.vercel.app/api/:id
   static getProductById = async (id: number): Promise<Product> => {
     // await new Promise((resolve) => setTimeout(resolve, 5000));
-    return fetch(`${BASE_URL}/products/${id}`).then((res) => res.json());
+    return fetch(`${BASE_URL}/${id}`).then((res) => res.json());
   };
 }

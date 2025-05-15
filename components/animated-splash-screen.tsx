@@ -2,7 +2,7 @@ import { Image, StyleSheet } from 'react-native';
 import { SlideOutUp } from 'react-native-reanimated';
 
 import { Box } from '~/theme';
-import { AnimatedBox } from '~/theme/AnimatedBox';
+import AnimatedBox from '~/theme/AnimatedBox';
 
 interface AnimatedSplashScreenProps {
   isVisible: boolean;

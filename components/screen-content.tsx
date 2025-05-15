@@ -1,6 +1,6 @@
 import { Box, Text } from 'theme';
 
-import { EditScreenInfo } from './EditScreenInfo';
+import { EditScreenInfo } from './edit-screen-info';
 
 type ScreenContentProps = {
   title: string;
