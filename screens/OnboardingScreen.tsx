@@ -1,7 +1,7 @@
 import { useAsyncStorage } from '@react-native-async-storage/async-storage';
 import { useRouter } from 'expo-router';
 
-import HorizontalSlider from '~/components/HorizontalSlider';
+import HorizontalSlider from '~/components/horizontal-slider';
 import { Box } from '~/theme';
 
 const slides = [

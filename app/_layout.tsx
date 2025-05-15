@@ -5,13 +5,16 @@ import { SplashScreen, Stack } from 'expo-router';
 import { useEffect } from 'react';
 import { theme } from 'theme';
 
-import { AnimatedSplashScreen } from '~/components/AnimatedSplashScreen';
+import { AnimatedSplashScreen } from '~/components/animated-splash-screen';
+import { usePushNotifications } from '~/core/push-notifications';
 import { useIsTimeoutReady } from '~/hooks/use-is-timeout-ready';
 import { asyncStoragePersister, queryClient } from '~/query/client';
 
 SplashScreen.preventAutoHideAsync();
 
 export default function Layout() {
+  const { notification, expoPushToken } = usePushNotifications();
+
   const [loaded, error] = useFonts({
     'Sora-Bold': require('../assets/fonts/Sora-Bold.ttf'),
     'Sora-ExtraBold': require('../assets/fonts/Sora-ExtraBold.ttf'),
@@ -30,6 +33,12 @@ export default function Layout() {
     }
   }, [loaded, error]);
 
+  useEffect(() => {
+    if (notification) {
+      console.log('notification', notification);
+    }
+  }, [notification]);
+
   if (!loaded && !error) {
     return null;
   }
@@ -39,7 +48,7 @@ export default function Layout() {
       client={queryClient}
       persistOptions={{ persister: asyncStoragePersister }}>
       <ThemeProvider theme={theme}>
-        <Stack />
+        <Stack screenOptions={{ headerShown: false }} />
         <AnimatedSplashScreen isVisible={!isTimeoutReady} />
       </ThemeProvider>
     </PersistQueryClientProvider>

@@ -6,7 +6,7 @@ import { FadeInDown, interpolate, SharedValue, useAnimatedStyle } from 'react-na
 
 import { WINDOW_HEIGHT, WINDOW_WIDTH } from '~/core/dimensions';
 import { Box, Text } from '~/theme';
-import { AnimatedBox } from '~/theme/AnimatedBox';
+import AnimatedBox from '~/theme/AnimatedBox';
 
 interface HorizontalSliderItemProps {
   index: number;

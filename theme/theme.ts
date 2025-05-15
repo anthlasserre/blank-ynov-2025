@@ -17,6 +17,8 @@ const palette = {
   white: '#FFFFFF',
   black: '#000000',
   purple: '#6366F1',
+
+  red: '#ED5151',
 };
 
 const theme = createTheme({
@@ -25,6 +27,7 @@ const theme = createTheme({
   },
   spacing: {
     xs_4: 4,
+    xs_6: 6,
     s_8: 8,
     sm_12: 12,
     m_16: 16,
@@ -35,6 +38,7 @@ const theme = createTheme({
   borderRadii: {
     s_3: 3,
     m_6: 6,
+    l_8: 8,
     l_12: 12,
     ml_16: 16,
     xl_24: 24,

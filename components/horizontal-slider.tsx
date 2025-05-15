@@ -9,12 +9,12 @@ import Animated, {
 } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import { Button } from './Button';
-import HorizontalSliderItem from './HorizontalSliderItem';
+import { Button } from './button';
+import HorizontalSliderItem from './horizontal-slider-item';
 
 import { WINDOW_WIDTH } from '~/core/dimensions';
 import { Box, useTheme } from '~/theme';
-import { AnimatedBox } from '~/theme/AnimatedBox';
+import AnimatedBox from '~/theme/AnimatedBox';
 
 interface HorizontalSliderProps {
   slides: {
